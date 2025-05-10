@@ -14,15 +14,15 @@ module.exports = {
       {
         test: /\.tsx?$/,
         use: { loader: 'ts-loader', options: { transpileOnly: true } },
-        exclude: /node_modules/,
+        exclude: /node_modules/
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader'],
-      },
-    ],
+        use: ['style-loader', 'css-loader', 'postcss-loader']
+      }
+    ]
   },
   resolve: { extensions: ['.tsx', '.ts', '.js'] },
   plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
-  devServer: { host: '0.0.0.0', port: 3000, hot: true },
+  devServer: { host: '0.0.0.0', port: 3000, hot: true }
 };

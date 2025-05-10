@@ -14,27 +14,15 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
+        use: { loader: 'babel-loader' }
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
-    ],
+        use: ['style-loader', 'css-loader', 'postcss-loader']
+      }
+    ]
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
-  devServer: {
-    host: '0.0.0.0',
-    port: 3000,
-    hot: true,
-  },
+  resolve: { extensions: ['.js', '.jsx'] },
+  plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
+  devServer: { host: '0.0.0.0', port: 3000, hot: true }
 };
