@@ -150,3 +150,10 @@ This project is licensed under the MIT License.
 - Created to simplify running Claude-generated React applications
 - Built with React 18
 - Optimized for GitHub Pages deployment
+
+## Handling TypeScript Strictness
+
+The TSX template uses relaxed TypeScript settings. If you encounter type errors:
+1. Use the JSX template instead
+2. Or add type definitions to your TypeScript code
+3. Or rename .tsx to .jsx files
