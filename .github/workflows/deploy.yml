@@ -27,7 +27,7 @@ jobs:
       - name: Build JSX Template
         run: |
           cd templates/jsx
-          npm ci
+          npm install
           npm run build
           
       - name: Setup Pages
