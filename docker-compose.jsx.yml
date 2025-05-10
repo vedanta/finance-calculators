@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  react-app:
+    build:
+      context: ./templates/jsx
+      dockerfile: ../../docker/Dockerfile.jsx
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./templates/jsx/src:/app/src
+    environment:
+      - CHOKIDAR_USEPOLLING=true

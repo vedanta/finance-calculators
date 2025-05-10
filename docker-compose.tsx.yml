@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  react-app:
+    build:
+      context: ./templates/tsx
+      dockerfile: ../../docker/Dockerfile.tsx
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./templates/tsx/src:/app/src
+    environment:
+      - CHOKIDAR_USEPOLLING=true

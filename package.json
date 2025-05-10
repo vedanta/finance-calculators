@@ -1,0 +1,16 @@
+{
+  "name": "cra-run",
+  "version": "1.0.0",
+  "description": "A simple way to run claude created react apps using docker container",
+  "scripts": {
+    "test:jsx": "cd templates/jsx && npm start",
+    "test:tsx": "cd templates/tsx && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vedanta/cra-run.git"
+  },
+  "keywords": ["react", "claude", "docker", "template"],
+  "author": "vedanta",
+  "license": "MIT"
+}
