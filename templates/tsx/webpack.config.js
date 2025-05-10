@@ -3,14 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: ['./src/index.tsx', './src/index.jsx'].find(entry => {
-    try {
-      require.resolve(entry);
-      return true;
-    } catch(e) {
-      return false;
-    }
-  }) || './src/index.tsx',
+  entry: './src/index.tsx',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
@@ -19,27 +12,17 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(tsx?|jsx?)$/,
-        use: 'ts-loader',
+        test: /\.tsx?$/,
+        use: { loader: 'ts-loader', options: { transpileOnly: true } },
         exclude: /node_modules/,
       },
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
+        use: ['style-loader', 'css-loader', 'postcss-loader'],
       },
     ],
   },
-  resolve: {
-    extensions: ['.tsx', '.ts', '.jsx', '.js'],
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './public/index.html',
-    }),
-  ],
-  devServer: {
-    host: '0.0.0.0',
-    port: 3000,
-    hot: true,
-  },
+  resolve: { extensions: ['.tsx', '.ts', '.js'] },
+  plugins: [new HtmlWebpackPlugin({ template: './public/index.html' })],
+  devServer: { host: '0.0.0.0', port: 3000, hot: true },
 };
