@@ -157,3 +157,13 @@ The TSX template uses relaxed TypeScript settings. If you encounter type errors:
 1. Use the JSX template instead
 2. Or add type definitions to your TypeScript code
 3. Or rename .tsx to .jsx files
+
+## GitHub Pages Deployment Fix
+
+The webpack configuration now automatically detects your repository name and sets the correct publicPath for GitHub Pages deployment. This means apps will work correctly on GitHub Pages without manual configuration.
+
+The publicPath is:
+- `/` for local development
+- `/{repository-name}/` for production builds on GitHub Pages
+
+This happens automatically - no manual changes needed!
