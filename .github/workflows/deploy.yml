@@ -24,9 +24,9 @@ jobs:
         with:
           node-version: '18'
       
-      - name: Build JSX Template
+      - name: Build TSX Template
         run: |
-          cd templates/jsx
+          cd templates/tsx
           npm install
           npm run build
           
@@ -36,7 +36,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './templates/jsx/dist'
+          path: './templates/tsx/dist'
 
   deploy:
     environment:
